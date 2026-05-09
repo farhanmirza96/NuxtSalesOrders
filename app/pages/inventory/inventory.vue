@@ -50,8 +50,8 @@
 
     <br />
     <NuxtLink to="/home">Home</NuxtLink> | 
-    <NuxtLink to="/purchaseorders/purchaseorders">Purchase Orders</NuxtLink> | 
-    <NuxtLink to="/salesorders/salesorders">Sales Orders</NuxtLink>
+    <NuxtLink to="/vendors/purchaseorders/purchaseorders">Purchase Orders</NuxtLink> | 
+    <NuxtLink to="/customers/salesorders/salesorders">Sales Orders</NuxtLink>
 </template>
 
 <script setup>

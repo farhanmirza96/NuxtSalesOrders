@@ -37,7 +37,8 @@ const teamsItems = computed<DropdownMenuItem[][]>(() => {
       kbds: ['meta', String(index + 1)],
       onSelect() {
         selectedTeam.value = team
-      }
+      },
+      
     })),
     [
       {
@@ -51,16 +52,24 @@ const teamsItems = computed<DropdownMenuItem[][]>(() => {
 function getItems(state: 'collapsed' | 'expanded') {
   return [
     {
+      label: 'Dashboard',
+      icon: 'i-lucide-house',
+      to: '/home'
+    },
+    {
+      
       label: 'Customers',
       icon: 'i-lucide-users',
       children: [
         {
           label: 'Add Customer',
-          icon: 'i-lucide-plus'
+          icon: 'i-lucide-plus',
+          to: '/customers/addcustomer'
         },
         {
           label: 'View Customers',
-          icon: 'i-lucide-eye'
+          icon: 'i-lucide-eye',
+          to: '/customers/customers'
         },
         {
           label: 'Edit Customer',
@@ -92,7 +101,8 @@ function getItems(state: 'collapsed' | 'expanded') {
             },
             {
               label: 'View Sales Orders',
-              icon: 'i-lucide-eye'
+              icon: 'i-lucide-eye',
+              to: '/customers/salesorders/salesorders'
             },
             {
               label: 'Edit Sales Order',
@@ -218,40 +228,7 @@ function getItems(state: 'collapsed' | 'expanded') {
             }
           ]
         },
-        {
-          label: 'Sales Debits',
-          icon: 'i-lucide-credit-card',
-          children: [
-            {
-              label: 'Add Sales Debit',
-              icon: 'i-lucide-plus'
-            },
-            {
-              label: 'View Sales Debits',
-              icon: 'i-lucide-eye'
-            },
-            {
-              label: 'Edit Sales Debit',
-              icon: 'i-lucide-edit'
-            },
-            {
-              label: 'Delete Sales Debit',
-              icon: 'i-lucide-trash'
-            },
-            {
-              label: 'Search Sales Debit',
-              icon: 'i-lucide-search'
-            },
-            {
-              label: 'Filter Sales Debit',
-              icon: 'i-lucide-filter'
-            },
-            {
-              label: 'Sort Sales Debit',
-              icon: 'i-lucide-sort-asc'
-            }
-          ]
-        },
+        
         {
           label: 'Receive Payments',
           icon: 'i-lucide-credit-card',
@@ -286,41 +263,7 @@ function getItems(state: 'collapsed' | 'expanded') {
             }
           ]
         },
-        {
-          label: 'Sales Refunds',
-          icon: 'i-lucide-credit-card',
-          children: [
-            {
-              label: 'Add Sales Refund',
-              icon: 'i-lucide-plus'
-            },
-            {
-              label: 'View Sales Refunds',
-              icon: 'i-lucide-eye'
-            },
-            {
-              label: 'Edit Sales Refund',
-              icon: 'i-lucide-edit'
-            },
-            {
-              label: 'Delete Sales Refund',
-              icon: 'i-lucide-trash'
-            },
-            {
-              label: 'Search Sales Refund',
-              icon: 'i-lucide-search'
-            },
-            {
-              label: 'Filter Sales Refund',
-              icon: 'i-lucide-filter'
-            },
-            {
-              label: 'Sort Sales Refund',
-              icon: 'i-lucide-sort-asc'
-            }
-          ]
-        },
-
+        
       ]
       // badge: '4'
     },
@@ -366,7 +309,8 @@ function getItems(state: 'collapsed' | 'expanded') {
             },
             {
               label: 'View Purchase Orders',
-              icon: 'i-lucide-eye'
+              icon: 'i-lucide-eye',
+              to: '/vendors/purchaseorders/purchaseorders'
             },
             {
               label: 'Edit Purchase Order',
@@ -538,7 +482,8 @@ function getItems(state: 'collapsed' | 'expanded') {
         },
         {
           label: 'View Inventory',
-          icon: 'i-lucide-eye'
+          icon: 'i-lucide-eye',
+          to: '/inventory/inventory'
         },
         {
           label: 'Edit Inventory',

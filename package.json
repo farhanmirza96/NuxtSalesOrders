@@ -12,9 +12,11 @@
   "dependencies": {
     "@nuxt/ui": "^4.6.1",
     "@nuxtjs/tailwindcss": "^7.0.0-beta.1",
+    "@pinia/nuxt": "^0.11.3",
     "@tailwindcss/postcss": "^4.2.4",
     "gsap": "^3.15.0",
     "nuxt": "^4.4.2",
+    "pinia": "^3.0.4",
     "tailwindcss": "^4.2.2",
     "v-gsap-nuxt": "^1.5.12",
     "vue": "^3.5.32",

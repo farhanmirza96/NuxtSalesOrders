@@ -50,7 +50,7 @@
 
     <br />
     <NuxtLink to="/home">Home</NuxtLink> | 
-    <NuxtLink to="/salesorders/salesorders">Sales Orders</NuxtLink> | 
+    <NuxtLink to="/customers/salesorders/salesorders">Sales Orders</NuxtLink> | 
     <NuxtLink to="/inventory/inventory">Inventory</NuxtLink>
 </template>
 

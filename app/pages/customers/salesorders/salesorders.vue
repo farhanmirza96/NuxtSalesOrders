@@ -14,6 +14,7 @@
         <table class="table-auto border-separate border-spacing-2 w-full text-left">
             <thead class="bg-gray-100">
                 <tr>
+                    <th><UCheckbox v-model="value" /></th>
                     <th class="border-1 border-gray-100 border-b-gray-500">Type</th>
                     <th class="border-1 border-gray-100 border-b-gray-500">Date</th>
                     <th class="border-1 border-gray-100 border-b-gray-500">Customer</th>
@@ -23,6 +24,7 @@
             </thead>
             <tbody>
                 <tr>
+                    <td><UCheckbox v-model="value" /></td>
                     <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
                     <td>Malcolm Lockyer</td>
                     <td>2025-01-01</td>
@@ -30,6 +32,7 @@
                     <td>Pending</td>
                 </tr>
                 <tr>
+                    <td><UCheckbox v-model="value" /></td>
                     <td>Witchy Woman</td>
                     <td>The Eagles</td>
                     <td>2025-01-02</td>
@@ -37,6 +40,7 @@
                     <td>Pending</td>
                 </tr>
                 <tr>
+                    <td><UCheckbox v-model="value" /></td>
                     <td>Shining Star</td>
                     <td>Earth, Wind, and Fire</td>
                     <td>2025-01-03</td>
@@ -50,7 +54,7 @@
 
     <br />
     <NuxtLink to="/home">Home</NuxtLink> | 
-    <NuxtLink to="/purchaseorders/purchaseorders">Purchase Orders</NuxtLink> | 
+    <NuxtLink to="/vendors/purchaseorders/purchaseorders">Purchase Orders</NuxtLink> | 
     <NuxtLink to="/inventory/inventory">Inventory</NuxtLink>
 </template>
 
@@ -58,4 +62,5 @@
 definePageMeta({
     layout: 'side-bar'
 })
+const value = ref(false)
 </script>
