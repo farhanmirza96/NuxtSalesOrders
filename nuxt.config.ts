@@ -5,7 +5,11 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   modules: ['@nuxt/ui', '@nuxtjs/tailwindcss', '@pinia/nuxt'],
-  css: ['~/assets/css/main.css'],
+  css: ['~/assets/css/input.css'],
+  vite: {
+    plugins: [
+    ],
+  },
   app: {
     head: {
       title: 'AK Foods', // default fallback title

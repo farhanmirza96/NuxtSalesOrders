@@ -1,5 +1,5 @@
 <template>
-    <div class="pt-2">
+    <div class="pt-2 mb-6">
         <header>
             <h1 class="text-2xl font-bold rounded-md p-2 bg-[#5E7AC4] text-white">Sales Orders</h1>
         </header>
