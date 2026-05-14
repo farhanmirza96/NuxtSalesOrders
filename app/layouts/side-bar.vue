@@ -732,8 +732,10 @@ defineShortcuts(extractShortcuts(teamsItems.value))
           :key="state"
           :items="getItems(state)"
           orientation="vertical"
-          :ui="{ link: 'p-1.5 overflow-hidden' }"
+          :ui="{ link: 'p-1.5 overflow-hidden text-gray-800 hover:bg-[#5E7AC4] hover:text-white' }"
+          
         />
+        <!-- :ui="{ link: 'p-1.5 overflow-hidden text-black hover:bg-blue-400 hover:text-white data-[active=true]:bg-blue-500 data-[active=true]:text-white' }" -->
       </template>
 
       <template #footer>
