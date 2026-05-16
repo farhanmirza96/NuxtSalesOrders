@@ -4,12 +4,15 @@
     <AppAlert>
       This is an auto-imported component
     </AppAlert><br />
-    <NuxtLink to="/">Home</NuxtLink>
+    <NuxtLink to="/home">Home</NuxtLink> |
+    <NuxtLink to="/customers/salesorders/salesorders">Sales Orders</NuxtLink> |
+    <NuxtLink to="/vendors/purchaseorders/purchaseorders">Purchase Orders</NuxtLink> |
+    <NuxtLink to="/inventory/inventory">Inventory</NuxtLink> |
   </div>
 </template>
 
 <script setup>
 definePageMeta({
-  layout: 'custom'
+    layout: 'side-bar'
 })
 </script>
