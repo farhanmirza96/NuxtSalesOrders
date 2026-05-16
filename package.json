@@ -13,6 +13,7 @@
     "@nuxt/ui": "^4.6.1",
     "@nuxtjs/tailwindcss": "^7.0.0-beta.1",
     "@pinia/nuxt": "^0.11.3",
+    "@supabase/supabase-js": "^2.105.4",
     "@tailwindcss/postcss": "^4.2.4",
     "@tailwindcss/vite": "^4.3.0",
     "flowbite": "^4.0.1",
@@ -25,6 +26,7 @@
     "vue-router": "^5.0.4"
   },
   "devDependencies": {
-    "@iconify-json/lucide": "^1.2.105"
+    "@iconify-json/lucide": "^1.2.105",
+    "@types/node": "^25.8.0"
   }
 }

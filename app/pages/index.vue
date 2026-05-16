@@ -14,7 +14,7 @@
       </div>
 
       <!-- Title -->
-      <h2 class="text-center tracking-widest text-lg mb-8 opacity-80">
+      <h2 class="text-center tracking-widest text-lg mb-8 opacity-80" v-gsap.splitText.chars.from="{ opacity: 0, y: 20 }">
         LOGIN
       </h2>
 
@@ -56,6 +56,7 @@
         <button
           type="submit"
           class="w-full bg-blue-900/70 hover:bg-blue-900 text-white py-3 mt-4 tracking-wide rounded-lg"
+          
         >
           LOGIN
         </button>
