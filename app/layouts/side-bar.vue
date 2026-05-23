@@ -58,7 +58,7 @@ function getItems(state: 'collapsed' | 'expanded') {
     },
     {
       
-      label: 'Customers',
+      label: 'Customer Center',
       icon: 'i-lucide-users',
       children: [
         {
@@ -69,27 +69,7 @@ function getItems(state: 'collapsed' | 'expanded') {
         {
           label: 'View Customers',
           icon: 'i-lucide-eye',
-          to: '/customers/customers'
-        },
-        {
-          label: 'Edit Customer',
-          icon: 'i-lucide-edit'
-        },
-        {
-          label: 'Delete Customer',
-          icon: 'i-lucide-trash'
-        },
-        {
-          label: 'Search Customer',
-          icon: 'i-lucide-search'
-        },
-        {
-          label: 'Filter Customer',
-          icon: 'i-lucide-filter'
-        },
-        {
-          label: 'Sort Customer',
-          icon: 'i-lucide-sort-asc'
+          to: '/customers/viewCustomers'
         },
         {
           label: 'Sales Orders',
@@ -279,14 +259,14 @@ function getItems(state: 'collapsed' | 'expanded') {
           label: 'View Vendors',
           icon: 'i-lucide-eye'
         },
-        {
-          label: 'Edit Vendor',
-          icon: 'i-lucide-edit'
-        },
-        {
-          label: 'Delete Vendor',
-          icon: 'i-lucide-trash'
-        },
+        // {
+        //   label: 'Edit Vendor',
+        //   icon: 'i-lucide-edit'
+        // },
+        // {
+        //   label: 'Delete Vendor',
+        //   icon: 'i-lucide-trash'
+        // },
         {
           label: 'Search Vendor',
           icon: 'i-lucide-search'

@@ -4,7 +4,7 @@ import { defineNuxtConfig } from 'nuxt/config'
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@nuxt/ui', '@nuxtjs/tailwindcss', '@pinia/nuxt', 'v-gsap-nuxt'],
+  modules: ['@nuxt/ui', '@nuxtjs/tailwindcss', '@pinia/nuxt', 'v-gsap-nuxt', '@nuxt/icon'],
   css: ['~/assets/css/input.css'],
   runtimeConfig: {
     public: {
