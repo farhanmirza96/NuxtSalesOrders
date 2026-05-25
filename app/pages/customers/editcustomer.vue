@@ -9,38 +9,32 @@
     <form @submit.prevent="updateCustomer">
       <div class="grid gap-6 mb-6 md:grid-cols-2">
         <div>
-          <label for="first_name" class="block mb-2.5 text-sm font-medium text-heading">First name*</label>
+          <label for="first_name" class="block mb-2.5 text-sm font-medium text-heading">Full name*</label>
           <input type="text" id="first_name"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2.5 shadow-sm placeholder:text-gray-400"
-            placeholder="First Name" v-model="form.name" required />
+            placeholder="Full Name" v-model="form.name" required />
         </div>
-        <!-- <div>
-          <label for="last_name" class="block mb-2.5 text-sm font-medium text-heading">Last name</label>
-          <input type="text" id="last_name"
+        <div>
+          <label for="phone" class="block mb-2.5 text-sm font-medium text-heading">Phone</label>
+          <input type="tel" id="phone"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2.5 shadow-sm placeholder:text-gray-400"
-            placeholder="Last Name" />
+            placeholder="03xxxxxxxxx" v-model="form.phone" />
         </div>
         <div>
           <label for="company" class="block mb-2.5 text-sm font-medium text-heading">Company*</label>
           <input type="text" id="company"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2.5 shadow-sm placeholder:text-gray-400"
             placeholder="Company name" required />
-        </div> -->
-        <div>
-          <label for="phone" class="block mb-2.5 text-sm font-medium text-heading">Phone</label>
-          <input type="tel" id="phone"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2.5 shadow-sm placeholder:text-gray-400"
-            placeholder="03xxxxxxxxx" v-model="form.phone"/>
         </div>
-        <!-- <div>
+        <div>
           <label for="website" class="block mb-2.5 text-sm font-medium text-heading">Website URL</label>
-          <input type="url" id="website"
+          <input type="text" id="website"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2.5 shadow-sm placeholder:text-gray-400"
             placeholder="website address" />
         </div>
         <div>
           <label for="email" class="block mb-2.5 text-sm font-medium text-heading">Email address</label>
-          <input type="email" id="email"
+          <input type="text" id="email"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2.5 shadow-sm placeholder:text-gray-400"
             placeholder="abc@company.com" />
         </div>
@@ -50,29 +44,22 @@
         <input type="text" id="address"
           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2.5 shadow-sm placeholder:text-gray-400"
           placeholder="Address" />
-      </div> -->
-        <!-- <div class="mb-6">
-        <label for="password" class="block mb-2.5 text-sm font-medium text-heading">Password</label>
-        <input type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2.5 shadow-sm placeholder:text-gray-400" placeholder="•••••••••" />
-    </div> 
-    <div class="mb-6">
-        <label for="confirm_password" class="block mb-2.5 text-sm font-medium text-heading">Confirm password</label>
-        <input type="password" id="confirm_password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2.5 shadow-sm placeholder:text-gray-400" placeholder="•••••••••" />
-    </div>  -->
-        <div class="flex items-start mb-6">
-          <!-- <div class="flex items-center h-5">
+      </div>
+
+      <div class="flex items-start mb-6">
+        <!-- <div class="flex items-center h-5">
         <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-2 focus:ring-blue-500" required />
         </div>
         <label for="remember" class="ms-2 text-sm font-medium text-heading">I agree with the <a href="#" class="text-fg-brand hover:underline">terms and conditions</a>.</label> -->
-          <p class="text-sm text-heading italic">* required fields</p>
-        </div>
-        <button type="submit"
-          class="text-white bg-[#5E7AC4] hover:bg-[#4A63A0] focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 focus:outline-none" >Update</button>
-        <button
-          class="text-white bg-[#5E7AC4] hover:bg-[#4A63A0] focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 focus:outline-none ml-2"
-          @click="navigateTo('/customers/viewCustomers')">Cancel</button>
-    </div>
+        <p class="text-sm text-heading italic">* required fields</p>
+      </div>
+      <button type="submit"
+        class="text-white bg-[#5E7AC4] hover:bg-[#4A63A0] focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 focus:outline-none">Update</button>
+      <button
+        class="text-white bg-[#5E7AC4] hover:bg-[#4A63A0] focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 focus:outline-none ml-2"
+        @click="navigateTo('/customers/viewCustomers')">Cancel</button>
     </form>
+
 
   </div>
 </template>
@@ -144,10 +131,10 @@ const getCustomer = async () => {
       // form.value.email = data.email
       // form.value.address = data.address
     }
-  } 
-  
+  }
+
   catch (err: any) {
-  console.error('Error fetching customer:', err)
+    console.error('Error fetching customer:', err)
     alert(err.message || 'An error occurred while fetching the customer details')
   }
 }
@@ -166,7 +153,7 @@ const updateCustomer = async () => {
       })
       .eq('id', customerId)
 
-    if (error) {console.log(error)}
+    if (error) { console.log(error) }
 
     alert('Customer updated successfully!')
     navigateTo('/customers/viewCustomers')

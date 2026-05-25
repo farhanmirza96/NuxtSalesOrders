@@ -6,7 +6,6 @@
         <th class="px-4 py-2 text-left text-gray-700 border-b">Name</th>
         <th class="px-4 py-2 text-left text-gray-700 border-b">Phone</th>
         <th class="px-4 py-2 text-left text-gray-700 border-b">Company Name</th>
-        
         <th class="px-4 py-2 text-left text-gray-700 border-b">Website</th>
         <th class="px-4 py-2 text-left text-gray-700 border-b">Email</th>
         <th class="px-4 py-2 text-left text-gray-700 border-b">Address</th>
@@ -23,12 +22,12 @@
         <td class="px-4 py-2 border-b">{{ customer.email }}</td>
         <td class="px-4 py-2 border-b">{{ customer.address }}</td>
         <td class="px-4 py-2 ">
-          <button @click="$router.push(`/customers/editcustomer/${customer.id}`)" >
+          <button @click="$router.push(`/customers/editcustomer/${customer.id}`)" class="cursor-pointer">
             <Icon name="lucide:edit" class="i-lucide-edit mr-1" />
             
           </button>
           <!-- <button class="ml-2 bg-sky-500 hover:bg-sky-700 text-white py-1 px-3 rounded" @click="deleteCustomer(customer.id)"> -->
-          <button @click="deleteCustomer(customer.id)">
+          <button @click="deleteCustomer(customer.id)" class="cursor-pointer">
             <Icon name="lucide:trash" class="i-lucide-trash" />
             
           </button>

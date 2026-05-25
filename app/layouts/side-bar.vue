@@ -248,7 +248,7 @@ function getItems(state: 'collapsed' | 'expanded') {
       // badge: '4'
     },
     {
-      label: 'Vendors',
+      label: 'Vendor Center',
       icon: 'i-lucide-users',
       children: [
         {
@@ -257,7 +257,8 @@ function getItems(state: 'collapsed' | 'expanded') {
         },
         {
           label: 'View Vendors',
-          icon: 'i-lucide-eye'
+          icon: 'i-lucide-eye',
+          to: '/vendors/viewVendors'
         },
         // {
         //   label: 'Edit Vendor',
