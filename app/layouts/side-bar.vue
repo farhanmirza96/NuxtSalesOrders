@@ -253,7 +253,8 @@ function getItems(state: 'collapsed' | 'expanded') {
       children: [
         {
           label: 'Add Vendor',
-          icon: 'i-lucide-plus'
+          icon: 'i-lucide-plus',
+          to: '/vendors/addvendors'
         },
         {
           label: 'View Vendors',
@@ -494,11 +495,13 @@ function getItems(state: 'collapsed' | 'expanded') {
       children: [
         {
           label: 'Add Product',
-          icon: 'i-lucide-plus'
+          icon: 'i-lucide-plus',
+          to: '/products/addproduct'
         },
         {
           label: 'View Products',
-          icon: 'i-lucide-eye'
+          icon: 'i-lucide-eye',
+          to: '/products/viewproducts'
         },
         {
           label: 'Edit Product',

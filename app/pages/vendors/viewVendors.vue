@@ -1,14 +1,20 @@
 <template>
+  <div class="pt-2 mb-6">
+      <header>
+        <h1 class="text-2xl font-bold rounded-md p-2 bg-[#5E7AC4] text-white">Vendors</h1>
+      </header>
+    </div>
  <table class="min-w-full bg-white border rounded-lg border-gray-200">
     <thead>
       <tr class="bg-[#5E7AC4]">
-        <th class="px-4 py-2 text-left text-gray-700 border-b">S.No</th>
-        <th class="px-4 py-2 text-left text-gray-700 border-b">Name</th>
-        <th class="px-4 py-2 text-left text-gray-700 border-b">Phone</th>
-        <th class="px-4 py-2 text-left text-gray-700 border-b">Company Name</th>
-        <th class="px-4 py-2 text-left text-gray-700 border-b">Website</th>
-        <th class="px-4 py-2 text-left text-gray-700 border-b">Email</th>
-        <th class="px-4 py-2 text-left text-gray-700 border-b">Address</th>
+        <th class="px-4 py-2 text-left text-white border-b">S.No</th>
+        <th class="px-4 py-2 text-left text-white border-b">Name</th>
+        <th class="px-4 py-2 text-left text-white border-b">Phone</th>
+        <th class="px-4 py-2 text-left text-white border-b">Company Name</th>
+        <th class="px-4 py-2 text-left text-white border-b">Website</th>
+        <th class="px-4 py-2 text-left text-white border-b">Email</th>
+        <th class="px-4 py-2 text-left text-white border-b">Address</th>
+        <th class="px-4 py-2 text-left text-white border-b">Actions</th>
       </tr>
     </thead>
     <tbody>

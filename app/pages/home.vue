@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { useRuntimeConfig } from '#app'
-
+import { createClient } from '@supabase/supabase-js'
 
 interface Instrument {
   id: string | number
@@ -13,8 +13,6 @@ definePageMeta({
 })
 
 const config = useRuntimeConfig()
-
-const { createClient } = await import('@supabase/supabase-js')
 
 const supabase = createClient(
   config.public.supabaseUrl,

@@ -2,11 +2,11 @@
   <div>
     <div class="pt-2 mb-6">
       <header>
-        <h1 class="text-2xl font-bold rounded-md p-2 bg-[#5E7AC4] text-white">Edit Customer</h1>
+        <h1 class="text-2xl font-bold rounded-md p-2 bg-[#5E7AC4] text-white">Edit Vendor</h1>
       </header>
     </div>
 
-    <form @submit.prevent="updateCustomer">
+    <form @submit.prevent="updateVendor">
       <div class="grid gap-6 mb-6 md:grid-cols-2">
         <div>
           <label for="full_name" class="block mb-2.5 text-sm font-medium text-heading">Full name*</label>
@@ -52,11 +52,11 @@
 
       <button type="submit"
         class="text-white bg-[#5E7AC4] hover:bg-[#4A63A0] focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 focus:outline-none">
-        Update Customer
+        Update Vendor
       </button>
       <button type="button"
         class="text-white bg-gray-500 hover:bg-gray-600 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2.5 focus:outline-none ml-2"
-        @click="navigateTo('/customers/viewCustomers')">
+        @click="navigateTo('/vendors/viewVendors')">
         Cancel
       </button>
     </form>
@@ -88,9 +88,9 @@ const form = ref({
   address: ''
 })
 
-async function getCustomer() {
+async function getVendor() {
   const { data, error } = await supabase
-    .from('customer')
+    .from('vendor')
     .select('*')
     .eq('id', route.params.id)
     .single()
@@ -112,9 +112,9 @@ async function getCustomer() {
   }
 }
 
-async function updateCustomer() {
+async function updateVendor() {
   const { error } = await supabase
-    .from('customer')
+    .from('vendor')
     .update(form.value)
     .eq('id', route.params.id)
 
@@ -123,11 +123,11 @@ async function updateCustomer() {
     return
   }
 
-  alert('Customer updated successfully!')
-  navigateTo('/customers/viewCustomers')
+  alert('Vendor updated successfully!')
+  navigateTo('/vendors/viewVendors')
 }
 
 onMounted(() => {
-  getCustomer()
+  getVendor()
 })
 </script>
