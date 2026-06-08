@@ -77,33 +77,16 @@ function getItems(state: 'collapsed' | 'expanded') {
           children: [
             {
               label: 'Add Sales Order',
-              icon: 'i-lucide-plus'
+              icon: 'i-lucide-plus',
+              to: '/customers/salesorders/addsalesorder'
             },
             {
-              label: 'View Sales Orders',
+              label: 'Sales Orders List',
               icon: 'i-lucide-eye',
-              to: '/customers/salesorders/salesorders'
+              to: '/customers/salesorders/viewsaleorder'
             },
-            {
-              label: 'Edit Sales Order',
-              icon: 'i-lucide-edit'
-            },
-            {
-              label: 'Delete Sales Order',
-              icon: 'i-lucide-trash'
-            },
-            {
-              label: 'Search Sales Order',
-              icon: 'i-lucide-search'
-            },
-            {
-              label: 'Filter Sales Order',
-              icon: 'i-lucide-filter'
-            },
-            {
-              label: 'Sort Sales Order',
-              icon: 'i-lucide-sort-asc'
-            }
+            
+            
           ]
         },
         {

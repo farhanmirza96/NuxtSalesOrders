@@ -28,6 +28,7 @@
               fill="none"
               viewBox="0 0 24 24"
               stroke="white"
+              transform="rotate(45)"
             >
               <path
                 stroke-linecap="round"
@@ -102,6 +103,13 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { gsap } from 'gsap'
 import { useRouter } from 'vue-router'
+import { useRuntimeConfig } from '#app' // Import useRuntimeConfig
+import { createClient } from '@supabase/supabase-js' //
+
+// Get runtime config
+const config = useRuntimeConfig()
+// Initialize Supabase client
+const supabase = createClient(config.public.supabaseUrl, config.public.supabasePublishableKey)
 
 const router = useRouter()
 
@@ -126,16 +134,30 @@ const remember = ref(true)
 const message = ref('')
 
 // To clean up GSAP tweens/timelines when component unmounts
-let tl = null
+let tl = null // This will hold our GSAP timeline for animations
 
-function onSubmit() {
-  if (username.value === 'admin' && password.value === 'admin') {
+async function onSubmit() {
+  message.value = "Logging in..."
+  try {
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email: username.value, // Assuming username is email for Supabase login
+      password: password.value,
+    })
+
+    if (error) {
+      message.value = error.message
+      // You can add more specific error handling here if needed
+      if (error.message.includes('Invalid login credentials')) {
+        message.value = 'Invalid email or password.'
+      }
+    } else if (data.session && data.user) {
     message.value = "Signing you in..."
-    setTimeout(() => {
-      router.push('/home')
-    }, 1000)
-  } else {
-    message.value = 'Invalid credentials. (Hint: admin/admin)'
+      await router.push('/home') // Use await for navigation
+    } else {
+      message.value = 'An unexpected error occurred during login.'
+    }
+  } catch (err) {
+    message.value = 'An unexpected error occurred: ' + err.message
   }
 
   // Keep animations safe if gsap not available
