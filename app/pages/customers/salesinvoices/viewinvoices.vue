@@ -3,8 +3,8 @@
         <div class="max-w-screen mx-auto bg-white shadow-lg rounded-lg border border-gray-200">
             <!-- Header Section -->
             <div class="p-4 border-b border-gray-200 bg-[#5E7AC4] rounded-t-lg flex justify-between items-center text-white">
-                <h1 class="text-xl font-bold">Sales Order</h1>
-                <div class=" text-sm font-medium">Sales Order List</div>
+                <h1 class="text-xl font-bold">Invoices</h1>
+                <div class=" text-sm font-medium">Invoices List</div>
             </div>
 
 
@@ -24,17 +24,17 @@
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-200">
-                        <tr v-for="(order, index) in sales_orders" :key="order.id"
+                        <tr v-for="(invoice, index) in sales_invoice" :key="invoice.id"
                             :class="[(index + 1) % 2 === 0 ? 'bg-gray-100' : 'bg-white']"
                             class="hover:bg-gray-200 cursor-pointer">
                             <td class="px-4 py-2">{{ index + 1 }}</td>
-                            <td class="px-4 py-2">{{ order.order_number }}</td>
-                            <td class="px-4 py-2">{{ order.order_date }}</td>
-                            <td class="px-4 py-2">{{ order.customer_name }}</td>
-                            <td class="px-4 py-2">Rs. {{ order.total_amount }}</td>
-                            <td class="px-4 py-2 capitalize">{{ order.status }}</td>
+                            <td class="px-4 py-2">{{ invoice.invoice_number }}</td>
+                            <td class="px-4 py-2">{{ invoice.invoice_date }}</td>
+                            <td class="px-4 py-2">{{ invoice.customer_name }}</td>
+                            <td class="px-4 py-2">Rs. {{ invoice.total_amount }}</td>
+                            <td class="px-4 py-2 capitalize">{{ invoice.status }}</td>
                             <td class="px-4 py-2">
-                                <NuxtLink :to="`/customers/salesorders/salesorders/${order.id}`"
+                                <NuxtLink :to="`/customers/salesinvoices/${invoice.id}`"
                                     class="text-blue-600 hover:text-blue-800 font-medium">View Details</NuxtLink>
                             </td>
                         </tr>
@@ -44,46 +44,36 @@
         </div>
     </div>
 </template>
+
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue'
 import { useRuntimeConfig } from '#app'
+import { createClient } from '@supabase/supabase-js'
 
-interface SalesOrderItem {
-    product_name: string
-    quantity: number
-    unit_name: string
-    unit_price: number
-    amount: number
-    status: string // Assuming status can be per item
-    order_number: string // Assuming order_number can be per item
-    customer_name: string // Assuming customer_name can be per item
-}
-
-interface SaleOrder {
-    id: string | number
-    order_number: string
-    order_date: string
-    customer_name: string
-    total_amount: number
-    created_at: string
-    status: string
-}
-
-const sales_orders = ref<SaleOrder[]>([])
 const config = useRuntimeConfig()
-const { createClient } = await import('@supabase/supabase-js')
 const supabase = createClient(
     config.public.supabaseUrl,
     config.public.supabasePublishableKey
 )
 
-async function getSaleOrders() {
+interface SalesInvoice {
+    id: string
+    invoice_number: string
+    invoice_date: string
+    customer_name: string
+    total_amount: number
+    status: string
+}
+
+const sales_invoice = ref<SalesInvoice[]>([])
+
+async function getInvoices() {
     const { data, error } = await supabase
-        .from('sales_order')
+        .from('sales_invoice')
         .select(`
             id,
-            order_number,
-            order_date,
+            invoice_number,
+            invoice_date,
             status,
             total_amount,
             customer:customer_id(name)
@@ -91,18 +81,17 @@ async function getSaleOrders() {
         .order('created_at', { ascending: false })
 
     if (error) {
-        console.error('Error fetching sales orders:', error)
+        console.error('Error fetching sales invoices:', error)
     } else {
-        console.log('viewsaleorder.vue: Fetched sales orders data:', data);
-        sales_orders.value = (data || []).map((order: any) => ({
-            ...order,
-            customer_name: order.customer?.name || 'N/A'
+        sales_invoice.value = (data || []).map((inv: any) => ({
+            ...inv,
+            customer_name: inv.customer?.name || 'N/A'
         }))
     }
 }
 
 onMounted(() => {
-    getSaleOrders()
+    getInvoices()
 })
 
 definePageMeta({

@@ -94,12 +94,14 @@ function getItems(state: 'collapsed' | 'expanded') {
           icon: 'i-lucide-file-text',
           children: [
             {
-              label: 'Add Sales Invoice',
-              icon: 'i-lucide-plus'
+              label: 'Create Invoice',
+              icon: 'i-lucide-plus',
+              to: '/customers/salesinvoices/createinvoice'
             },
             {
               label: 'View Sales Invoices',
-              icon: 'i-lucide-eye'
+              icon: 'i-lucide-eye',
+              to: '/customers/salesinvoices/viewinvoices'
             },
             {
               label: 'Edit Sales Invoice',
