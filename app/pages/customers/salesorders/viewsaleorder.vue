@@ -34,7 +34,7 @@
                             <td class="px-4 py-2">Rs. {{ order.total_amount }}</td>
                             <td class="px-4 py-2 capitalize">{{ order.status }}</td>
                             <td class="px-4 py-2">
-                                <NuxtLink :to="`/customers/salesorders/salesorders/${order.id}`"
+                                <NuxtLink :to="`/customers/salesorders/${order.id}`"
                                     class="text-blue-600 hover:text-blue-800 font-medium">View Details</NuxtLink>
                             </td>
                         </tr>
@@ -47,6 +47,12 @@
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue'
 import { useRuntimeConfig } from '#app'
+const config = useRuntimeConfig()
+const { createClient } = await import('@supabase/supabase-js')
+const supabase = createClient(
+    config.public.supabaseUrl,
+    config.public.supabasePublishableKey
+)
 
 interface SalesOrderItem {
     product_name: string
@@ -70,12 +76,6 @@ interface SaleOrder {
 }
 
 const sales_orders = ref<SaleOrder[]>([])
-const config = useRuntimeConfig()
-const { createClient } = await import('@supabase/supabase-js')
-const supabase = createClient(
-    config.public.supabaseUrl,
-    config.public.supabasePublishableKey
-)
 
 async function getSaleOrders() {
     const { data, error } = await supabase

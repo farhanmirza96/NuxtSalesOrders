@@ -50,6 +50,7 @@
                             <th class="px-4 py-2 w-48">Units</th>
                             <th class="px-4 py-2">Rate</th>
                             <th class="px-4 py-2">Amount</th>
+                            <th class="px-4 py-2">Status</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-200">
@@ -69,7 +70,7 @@
             <!-- Footer Actions -->
             <div class="flex justify-end gap-3 p-4 border-t border-gray-100">
                 <NuxtLink :to="`/customers/salesorders/edit/${sales_order.id}`" class="px-6 py-2 bg-blue-600 text-white rounded text-sm font-bold hover:bg-blue-700 shadow-md">Edit Order</NuxtLink>
-                <NuxtLink to="/customers/salesorders/viewsaleorder" class="px-4 py-2 border border-gray-300 rounded text-sm text-gray-600 hover:bg-gray-50">Back to List</NuxtLink>
+                <NuxtLink to="/customers/salesorders" class="px-4 py-2 border border-gray-300 rounded text-sm text-gray-600 hover:bg-gray-50">Back to List</NuxtLink>
             </div>
         </div>
     </div>
